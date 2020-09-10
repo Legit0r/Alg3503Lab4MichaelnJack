@@ -1,10 +1,10 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class main {
+public class Main {
 
     public static void printArray(int[] inputArray) {
-        for (Integer element : inputArray){
+        for (Integer element : inputArray) {
             System.out.printf("%s ", element);
             System.out.println();
         }
@@ -16,19 +16,23 @@ public class main {
         //num[] = arr of all nums
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Input Bin Size: ");
+        System.out.println("Input desired bin size:");
         int b = sc.nextInt();
 
-        System.out.println("Input # of unsorted Numbers: ");
+        System.out.println("Input number of integers to sort: ");
         int n = sc.nextInt();
 
-        System.out.println("Enter all Nums: ");
-        int num[] = new int[n];
-        for (int i = 0; i < n; i++) {
-            num[i] = sc.nextInt();
-            if(num.length > n){
-                System.out.println("Oop");
-                break;
+        System.out.println("Enter the integers to be sorted");
+        int maxCapacity = 0;
+        int[] num = new int[n];
+        while (maxCapacity != n) {
+            int inputNum = sc.nextInt();
+            if (inputNum > b) {
+                System.out.println("Integers must be less than or " +
+                        "equal to the size of the bin.");
+            } else {
+                num[maxCapacity] = inputNum;
+                maxCapacity++;
             }
         }
         printArray(num);
