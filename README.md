@@ -1,4 +1,3 @@
-# Alg3503Lab4MichaelnJack
 # Specific Requirements
 
 Your algorithm must be an approximation algorithm, it is not allowed
