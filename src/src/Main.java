@@ -33,9 +33,14 @@ public class Main {
             } else {
                 num[maxCapacity] = inputNum;
                 maxCapacity++;
+                if (n - maxCapacity > 1) {
+                    System.out.println("Please enter " + (n - maxCapacity) + " more integers.");
+                } else {
+                    System.out.println("Please enter 1 more integer.");
+                }
             }
         }
-        printArray(num);
+        System.out.print(Arrays.toString(num) + " ");
         //new main().binSort(num, n, b)
     }
 //    3 Bins MAX
