@@ -45,6 +45,8 @@ public class Main {
             }
         }
 
+        System.out.println("\n");
+
         // Bin one for packing
         ArrayList<Integer> binOne = new ArrayList<>();
 
@@ -91,27 +93,56 @@ public class Main {
             }
         }
 
-        System.out.println("Bin one contents:");
+        // Printing the contents of bin one
+        int count = 0;
+        System.out.println("Bin one of size " + b + " contains integers:");
+        System.out.print("[");
         for (int number : binOne){
-            System.out.println(number);
+            if(count > 0){
+                System.out.print(", ");
+            }
+            System.out.print(number);
+            count++;
         }
+        System.out.print("]");
         System.out.println("\n");
 
-        System.out.println("Bin two contents:");
+        System.out.println("Bin two of size " + b + " contains integers:");
+        System.out.print("[");
+        count = 0;
         for (int number : binTwo){
-            System.out.println(number);
+            if(count > 0){
+                System.out.print(", ");
+            }
+            System.out.print(number);
+            count++;
         }
+        System.out.print("]");
         System.out.println("\n");
 
-        System.out.println("Bin three contents:");
+        System.out.println("Bin three of size " + b + " contains integers:");
+        System.out.print("[");
+        count = 0;
         for (int number : binThree){
-            System.out.println(number);
+            if(count > 0){
+                System.out.print(", ");
+            }
+            System.out.print(number);
+            count++;
         }
+        System.out.print("]");
         System.out.println("\n");
 
         System.out.println("Integers that could not fit into available bins:");
+        System.out.print("[");
+        count = 0;
         for (int number : remainderBin){
-            System.out.println(number);
+            if(count > 0){
+                System.out.print(", ");
+            }
+            System.out.print(number);
+            count++;
         }
+        System.out.print("]");
     }
 }
