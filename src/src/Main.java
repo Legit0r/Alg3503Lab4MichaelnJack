@@ -3,6 +3,7 @@
  * @Author: Jack Perala, Michael ???, Elk Oswood (?)
  */
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -27,14 +28,14 @@ public class Main {
 
         System.out.println("Enter the first integer to be sorted");
         int maxCapacity = 0;
-        int[] inputNums = new int[n];
+        ArrayList<Integer> inputNums = new ArrayList<>();
         while (maxCapacity != n) {
             int inputNum = sc.nextInt();
             if (inputNum > b) {
                 System.out.println("Integers must be less than or " +
                         "equal to the size of the bin.");
             } else {
-                inputNums[maxCapacity] = inputNum;
+                inputNums.add(inputNum);
                 maxCapacity++;
                 if (n - maxCapacity > 1) {
                     System.out.println("Please enter " + (n - maxCapacity) + " more integers.");
@@ -43,21 +44,18 @@ public class Main {
                 }
             }
         }
-        System.out.print(Arrays.toString(inputNums) + " ");
-
-        System.out.println("\n");
 
         // Bin one for packing
-        int[] binOne = new int[b];
+        ArrayList<Integer> binOne = new ArrayList<>();
 
         // Bin two for packing
-        int[] binTwo = new int[b];
+        ArrayList<Integer> binTwo = new ArrayList<>();
 
         // Bin three for packing
-        int[] binThree = new int[b];
+        ArrayList<Integer> binThree = new ArrayList<>();
 
         // Bin for remaining numbers
-        int[] remainderBin = new int[b];
+        ArrayList<Integer> remainderBin = new ArrayList<>();
 
         int binOneSpace = b;
 
@@ -73,42 +71,47 @@ public class Main {
 
         int rB = 0;
 
-        for (int i = 0; i < inputNums.length; i++){
+        for (int i = 0; i < inputNums.size(); i++){
 
-            if (inputNums[i] <= binOneSpace){
-                binOne[b1] = inputNums[i];
+            if (inputNums.get(i) <= binOneSpace){
+                binOne.add(inputNums.get(i));
                 b1++;
-                binOneSpace = binOneSpace - inputNums[i];
-            }else if (inputNums[i] <= binTwoSpace){
-                binTwo[b2] = inputNums[i];
+                binOneSpace = binOneSpace - inputNums.get(i);
+            }else if (inputNums.get(i) <= binTwoSpace){
+                binTwo.add(inputNums.get(i));
                 b2++;
-                binTwoSpace = binTwoSpace - inputNums[i];
-            } else if (inputNums[i] <= binThreeSpace){
-                binThree[b3] = inputNums[i];
+                binTwoSpace = binTwoSpace - inputNums.get(i);
+            } else if (inputNums.get(i) <= binThreeSpace){
+                binThree.add(inputNums.get(i));
                 b3++;
-                binThreeSpace = binThreeSpace - inputNums[i];
+                binThreeSpace = binThreeSpace - inputNums.get(i);
             } else {
-                remainderBin[rB] = inputNums[i];
+                remainderBin.add(inputNums.get(i));
                 rB++;
             }
         }
 
-        System.out.println("Bin one contents");
+        System.out.println("Bin one contents:");
         for (int number : binOne){
             System.out.println(number);
         }
         System.out.println("\n");
 
-        System.out.println("Bin two contents");
+        System.out.println("Bin two contents:");
         for (int number : binTwo){
             System.out.println(number);
         }
         System.out.println("\n");
 
-        System.out.println("Bin three contents");
+        System.out.println("Bin three contents:");
         for (int number : binThree){
             System.out.println(number);
         }
         System.out.println("\n");
+
+        System.out.println("Integers that could not fit into available bins:");
+        for (int number : remainderBin){
+            System.out.println(number);
+        }
     }
 }
