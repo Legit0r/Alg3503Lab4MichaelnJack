@@ -4,8 +4,6 @@
 - [Testing Data](#testing-data)
 ----
 
-#Overview
-
 ## Explanation of the Algorithm
 Our lab implements a best-fit approach for bin packing. I found this video to give a clear and concise visual 
 explanation of how the concept works, https://www.youtube.com/watch?v=vUxhAmfXs2o.
@@ -19,9 +17,9 @@ values that will not be able to be packed into the bins. This problem could pote
 approach but the best-fit approach seems like the best choice to satisfy the requirements of the lab.
     
 ## Testing Data
->Below you will find some of testing data used for our algorithm all values were provided by the user using the 
->Scanner class in java.
->>Test case one using numbers randomly chosen and inputted by the user.
+Below you will find some of testing data used for our algorithm all values were provided by the user using the 
+Scanner class in java.
+>Test case one using numbers randomly chosen and inputted by the user.
 ```
     Input desired bin size:
     10
@@ -65,7 +63,7 @@ approach but the best-fit approach seems like the best choice to satisfy the req
     Integers that could not fit into available bins:
     [8, 9, 10]
 ```    
->>Test case two using user provided input of all integers equal to one.
+>Test case two using user provided input of all integers equal to one.
 ```
     Input desired bin size:
     10
@@ -127,7 +125,7 @@ approach but the best-fit approach seems like the best choice to satisfy the req
     Integers that could not fit into available bins:
     []
 ``` 
->>Test case three using user inputted values of all integers equal to the bin size.
+>Test case three using user inputted values of all integers equal to the bin size.
 ```
     Input desired bin size:
     10
@@ -158,7 +156,7 @@ approach but the best-fit approach seems like the best choice to satisfy the req
     Integers that could not fit into available bins:
     [10, 10]
 ```
->>Test case four using an integer equal to one followed by an integer equal to the size of the bin.
+>Test case four using an integer equal to one followed by an integer equal to the size of the bin.
 ```
     Input desired bin size:
     10
