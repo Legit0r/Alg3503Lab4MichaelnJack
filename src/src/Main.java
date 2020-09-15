@@ -56,11 +56,59 @@ public class Main {
         // Bin three for packing
         int[] binThree = new int[b];
 
-        // Sorting the array of input integers
-        Arrays.sort(inputNums);
-        System.out.println("Sorted array: ");
-        for (int number : inputNums){
+        // Bin for remaining numbers
+        int[] remainderBin = new int[b];
+
+        int binOneSpace = b;
+
+        int b1 = 0;
+
+        int binTwoSpace = b;
+
+        int b2 = 0;
+
+        int binThreeSpace = b;
+
+        int b3 = 0;
+
+        int rB = 0;
+
+        for (int i = 0; i < inputNums.length; i++){
+
+            if (inputNums[i] <= binOneSpace){
+                binOne[b1] = inputNums[i];
+                b1++;
+                binOneSpace = binOneSpace - inputNums[i];
+            }else if (inputNums[i] <= binTwoSpace){
+                binTwo[b2] = inputNums[i];
+                b2++;
+                binTwoSpace = binTwoSpace - inputNums[i];
+            } else if (inputNums[i] <= binThreeSpace){
+                binThree[b3] = inputNums[i];
+                b3++;
+                binThreeSpace = binThreeSpace - inputNums[i];
+            } else {
+                remainderBin[rB] = inputNums[i];
+                rB++;
+            }
+        }
+
+        System.out.println("Bin one contents");
+        for (int number : binOne){
             System.out.println(number);
         }
+        System.out.println("\n");
+
+        System.out.println("Bin two contents");
+        for (int number : binTwo){
+            System.out.println(number);
+        }
+        System.out.println("\n");
+
+        System.out.println("Bin three contents");
+        for (int number : binThree){
+            System.out.println(number);
+        }
+        System.out.println("\n");
     }
 }
