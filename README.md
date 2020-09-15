@@ -1,4 +1,8 @@
-# Alg3503Lab4MichaelnJack
+# University of Minnesota Morris Algorithms 3501 Lab 4
+*[Overview]
+    *[Explanation of the Algorithm](#explanation-of-the-algorithm)
+    *[Testing Data](#testing-data)
+
 ### Explanation of the Algorithm
 Our lab implements a best-fit approach for bin packing. I found this video to give a clear and concise visual 
 explanation of how the concept works, https://www.youtube.com/watch?v=vUxhAmfXs2o.
@@ -11,7 +15,7 @@ of provided values are. The more values provided that are close to the size of t
 values that will not be able to be packed into the bins. This problem could potentially be relieved by a brute-force
 approach but the best-fit approach seems like the best choice to satisfy the requirements of the lab.
     
-### Test Data
+### Testing Data
 >Below you will find some of testing data used for our algorithm all values were provided by the user using the 
 >Scanner class in java.
 >>Test case one using numbers randomly chosen and inputted by the user.
