@@ -1,3 +1,8 @@
+/**
+ * @Title: Algorithms 3501 Lab 4
+ * @Author: Jack Perala, Michael ???, Elk Oswood (?)
+ */
+
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -11,9 +16,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        //b = bin size
-        //n = number of nums
-        //num[] = arr of all nums
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Input desired bin size:");
@@ -22,16 +25,16 @@ public class Main {
         System.out.println("Input number of integers to sort: ");
         int n = sc.nextInt();
 
-        System.out.println("Enter the integers to be sorted");
+        System.out.println("Enter the first integer to be sorted");
         int maxCapacity = 0;
-        int[] num = new int[n];
+        int[] inputNums = new int[n];
         while (maxCapacity != n) {
             int inputNum = sc.nextInt();
             if (inputNum > b) {
                 System.out.println("Integers must be less than or " +
                         "equal to the size of the bin.");
             } else {
-                num[maxCapacity] = inputNum;
+                inputNums[maxCapacity] = inputNum;
                 maxCapacity++;
                 if (n - maxCapacity > 1) {
                     System.out.println("Please enter " + (n - maxCapacity) + " more integers.");
@@ -40,14 +43,24 @@ public class Main {
                 }
             }
         }
-        System.out.print(Arrays.toString(num) + " ");
-        //new main().binSort(num, n, b)
-    }
-//    3 Bins MAX
-//    Minimize amount of unused bin space
-//
-//    Scanner
-//    Input: Takes in Bin Size, # of Nums, and Nums themselves
-//    Output: Elements in each bin, list of unpacked items, amount of unused space
+        System.out.print(Arrays.toString(inputNums) + " ");
 
+        System.out.println("\n");
+
+        // Bin one for packing
+        int[] binOne = new int[b];
+
+        // Bin two for packing
+        int[] binTwo = new int[b];
+
+        // Bin three for packing
+        int[] binThree = new int[b];
+
+        // Sorting the array of input integers
+        Arrays.sort(inputNums);
+        System.out.println("Sorted array: ");
+        for (int number : inputNums){
+            System.out.println(number);
+        }
+    }
 }
