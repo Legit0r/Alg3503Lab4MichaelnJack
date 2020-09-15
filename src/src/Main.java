@@ -60,6 +60,10 @@ public class Main {
         int binTwoSpace = b;
         int binThreeSpace = b;
 
+        // While the video does not show any specific algorithm work I found it useful for helping
+        // Visualize the best way to approach the problem so figured it should be cited.
+        // https://www.youtube.com/watch?v=vUxhAmfXs2o
+
         // Iterating through the input numbers to see which bin they fit into first.
         for (Integer inputNum : inputNums) {
 
