@@ -1,21 +1,13 @@
-# Specific Requirements
-
-Your algorithm must be an approximation algorithm, it is not allowed
-to check all possibilities.
-
-• Your algorithm does not have to find the optimal solution for all cases
-but it should find a good solution for most cases.
-
-• The input includes the capacity of the bins followed by the number
-of items N followed by the items themselves separated by spaces. For
-instance, the input for the above problem is 20 8 12 4 8 15 9 3 1
-10 Here B=20, N=8, and the 8 items follow. See the Scanner class
-which allows you to read data from the Java console (standard input).
-Your output should be the list of elements in each bin, the list of the
-unpacked items, and the amount of unused space. Please make your
-answers readable.
-
-• You may use any of the algorithms implemented in Java Collections
-class or any other predefined Java algorithms.
-See http://docs.oracle.com/javase/tutorial/collections/algorithms/index.html
-for a tutorial on the Collections class.
+# Alg3503Lab4MichaelnJack
+Explanation of the algorithm: <br/><br/>
+    Our lab implements a best-fit approach for bin packing. I found this video to give a clear and concise visual explanation
+    of how the concept works, https://www.youtube.com/watch?v=vUxhAmfXs2o. <br/><br/> 
+    The best-fit approach works by taking an 
+    unsorted group of numeric values then iterates over the values placing them in the first bin that has enough 
+    remaining room. This means that occasionally there will be a remaining value that could not be packed into a 
+    bin even though it may have worked if substituted for another bins value. Overall this logic works pretty well
+    and leaves few to no remainders but this can be dependent on how large the majority of provided values are.
+    The more values provided that are close to the size of the bin will mean there are more values that will not
+    be able to be packed into the bins. This problem could potentially be relieved by a brute-force approach but the best-fit
+    approach seems like the best choice to satisfy the requirements of the lab.
+    
