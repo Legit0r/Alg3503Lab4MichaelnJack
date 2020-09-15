@@ -1,31 +1,27 @@
-/**
- * @Title: Algorithms 3501 Lab 4
+/*
+  @Title: Algorithms 3501 Lab 4
  * @Author: Jack Perala, Michael ???, Elk Oswood (?)
  */
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Main {
 
-    public static void printArray(int[] inputArray) {
-        for (Integer element : inputArray) {
-            System.out.printf("%s ", element);
-            System.out.println();
-        }
-    }
-
     public static void main(String[] args) {
 
+        // Setting up the scanner.
         Scanner sc = new Scanner(System.in);
 
+        // Reads the user input to determine the size of each bin.
         System.out.println("Input desired bin size:");
         int b = sc.nextInt();
 
+        // Reads the user input to determine the number of integers that will be sorted into bins.
         System.out.println("Input number of integers to sort: ");
         int n = sc.nextInt();
 
+        // Reading the user inputs to place integers into an ArrayList to later be sorted into bins.
         System.out.println("Enter the first integer to be sorted");
         int maxCapacity = 0;
         ArrayList<Integer> inputNums = new ArrayList<>();
@@ -47,53 +43,41 @@ public class Main {
 
         System.out.println("\n");
 
-        // Bin one for packing
+        // Bin one for packing.
         ArrayList<Integer> binOne = new ArrayList<>();
 
-        // Bin two for packing
+        // Bin two for packing.
         ArrayList<Integer> binTwo = new ArrayList<>();
 
-        // Bin three for packing
+        // Bin three for packing.
         ArrayList<Integer> binThree = new ArrayList<>();
 
-        // Bin for remaining numbers
+        // Bin for remaining numbers.
         ArrayList<Integer> remainderBin = new ArrayList<>();
 
+        // Setting up variable counters to check if the first available bin has enough space.
         int binOneSpace = b;
-
-        int b1 = 0;
-
         int binTwoSpace = b;
-
-        int b2 = 0;
-
         int binThreeSpace = b;
 
-        int b3 = 0;
+        // Iterating through the input numbers to see which bin they fit into first.
+        for (Integer inputNum : inputNums) {
 
-        int rB = 0;
-
-        for (int i = 0; i < inputNums.size(); i++){
-
-            if (inputNums.get(i) <= binOneSpace){
-                binOne.add(inputNums.get(i));
-                b1++;
-                binOneSpace = binOneSpace - inputNums.get(i);
-            }else if (inputNums.get(i) <= binTwoSpace){
-                binTwo.add(inputNums.get(i));
-                b2++;
-                binTwoSpace = binTwoSpace - inputNums.get(i);
-            } else if (inputNums.get(i) <= binThreeSpace){
-                binThree.add(inputNums.get(i));
-                b3++;
-                binThreeSpace = binThreeSpace - inputNums.get(i);
+            if (inputNum <= binOneSpace) {
+                binOne.add(inputNum);
+                binOneSpace = binOneSpace - inputNum;
+            } else if (inputNum <= binTwoSpace) {
+                binTwo.add(inputNum);
+                binTwoSpace = binTwoSpace - inputNum;
+            } else if (inputNum <= binThreeSpace) {
+                binThree.add(inputNum);
+                binThreeSpace = binThreeSpace - inputNum;
             } else {
-                remainderBin.add(inputNums.get(i));
-                rB++;
+                remainderBin.add(inputNum);
             }
         }
 
-        // Printing the contents of bin one
+        // Printing the contents of bin one.
         int count = 0;
         System.out.println("Bin one of size " + b + " contains integers:");
         System.out.print("[");
@@ -107,6 +91,7 @@ public class Main {
         System.out.print("]");
         System.out.println("\n");
 
+        // Printing the contents of bin two.
         System.out.println("Bin two of size " + b + " contains integers:");
         System.out.print("[");
         count = 0;
@@ -120,6 +105,7 @@ public class Main {
         System.out.print("]");
         System.out.println("\n");
 
+        // Printing the contents of bin three.
         System.out.println("Bin three of size " + b + " contains integers:");
         System.out.print("[");
         count = 0;
@@ -133,6 +119,7 @@ public class Main {
         System.out.print("]");
         System.out.println("\n");
 
+        // Printing the integers that could not fit into the available bins.
         System.out.println("Integers that could not fit into available bins:");
         System.out.print("[");
         count = 0;
