@@ -342,9 +342,9 @@ Integers that could not fit into available bins:
 
 ## Efficiency of Algorithm in Terms of Big O
 This algorithm has 4 steps, excluding the setup of the input and formatting of the output. These steps are:
-- create 4 empty arrays [Θ(1)]
-- iterate over the list of numbers [Θ(n)]
-- find the bucket w room for it, worst case it goes into the 4th bin of leftover #. [3 comparisons, in Θ(1)]
-- insert number into bucket [with java.util.arraylist Θ(1)]
+- Create 4 empty arraylists for our "bins". [Θ(1)]
+- Iterate over the list of numbers. [Θ(n)]
+- Find the bin with space left for the number. The worst case runtime would be that it fits in none of the 3 bins, and is instead inserted into the remainderBin. [3 comparisons, in Θ(1)]
+- Insert number into the bin. [with java.util.arraylist Θ(1)]
 
 So, the algorithm efficiency would be Θ(n).
