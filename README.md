@@ -338,3 +338,14 @@ Bin three of size 10 contains integers:
 Integers that could not fit into available bins:
 [7, 6, 5, 4, 3]
 ```
+
+## Efficiency of Algorithm in Terms of Big-O
+```
+This algorithm has 4 steps, excluding the setup of the input and formatting of the output. These steps are:
+- create 4 empty arrays [Θ(1)]
+- iterate over the list of numbers [Θ(n)]
+- find the bucket w room for it, worst case it goes into the 4th bin of leftover #. [3 comparisons, in Θ(1)]
+- insert number into bucket [with java.util.arraylist Θ(1)]
+
+So, the algorithm efficiency would be Θ(n).
+```
