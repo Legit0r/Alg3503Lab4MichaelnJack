@@ -2,6 +2,7 @@
 
 - [Explanation of the Algorithm](#explanation-of-the-algorithm)
 - [Testing Data](#testing-data)
+- [When is the Algorithm Optimal?](#when-is-the-algorithm-optimal)
 ----
 
 ## Explanation of the Algorithm
@@ -206,4 +207,134 @@ Scanner class in java.
 
     Integers that could not fit into available bins:
     [10, 10, 10, 10, 10]
+```
+
+## When is the Algorithm Optimal?
+Our best fit algorithm approach appears to work best when the high and low values are distributed in a high-low-high
+, or vice versa, fashion. The worst case is when they inputs are sorted from highest to lowest, and does not perform 
+well when the inputs are sorted from lowest to highest as well. If this were the case the first bins are filled only
+with small (or high) values leaving little to no space for the other values to be packed in to the bins later. 
+We can see this distribution between three test cases.
+>Test case one using high-low-high order values.
+```
+Input desired bin size:
+15
+Input number of integers to sort: 
+10
+Enter the first integer to be sorted
+8
+Please enter 9 more integers.
+3
+Please enter 8 more integers.
+9
+Please enter 7 more integers.
+4
+Please enter 6 more integers.
+5
+Please enter 5 more integers.
+6
+Please enter 4 more integers.
+1
+Please enter 3 more integers.
+8
+Please enter 2 more integers.
+7
+Please enter 1 more integer.
+2
+Please enter 1 more integer.
+
+
+Bin one of size 15 contains integers:
+[8, 3, 4]
+
+Bin two of size 15 contains integers:
+[9, 5, 1]
+
+Bin three of size 15 contains integers:
+[6, 8]
+
+Integers that could not fit into available bins:
+[7, 2]
+```
+>Test Case 2 with all values in order smallest to largest.
+```
+Input desired bin size:
+10
+Input number of integers to sort: 
+10
+Enter the first integer to be sorted
+1
+Please enter 9 more integers.
+2
+Please enter 8 more integers.
+3
+Please enter 7 more integers.
+4
+Please enter 6 more integers.
+5
+Please enter 5 more integers.
+6
+Please enter 4 more integers.
+7
+Please enter 3 more integers.
+8
+Please enter 2 more integers.
+9
+Please enter 1 more integer.
+10
+Please enter 1 more integer.
+
+
+Bin one of size 10 contains integers:
+[1, 2, 3, 4]
+
+Bin two of size 10 contains integers:
+[5]
+
+Bin three of size 10 contains integers:
+[6]
+
+Integers that could not fit into available bins:
+[7, 8, 9, 10]
+```
+>Test case three with values sorted from highest to lowest.
+```
+Input desired bin size:
+10
+Input number of integers to sort: 
+10
+Enter the first integer to be sorted
+10
+Please enter 9 more integers.
+9
+Please enter 8 more integers.
+8
+Please enter 7 more integers.
+7
+Please enter 6 more integers.
+6
+Please enter 5 more integers.
+5
+Please enter 4 more integers.
+4
+Please enter 3 more integers.
+3
+Please enter 2 more integers.
+2
+Please enter 1 more integer.
+1
+Please enter 1 more integer.
+
+
+Bin one of size 10 contains integers:
+[10]
+
+Bin two of size 10 contains integers:
+[9, 1]
+
+Bin three of size 10 contains integers:
+[8, 2]
+
+Integers that could not fit into available bins:
+[7, 6, 5, 4, 3]
 ```
