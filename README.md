@@ -210,11 +210,11 @@ Scanner class in java.
 ```
 
 ## When is the Algorithm Optimal?
-Our best fit algorithm approach appears to work best when the high and low values are distributed in a high-low-high
-, or vice versa, fashion. The worst case is when they inputs are sorted from highest to lowest, and does not perform 
-well when the inputs are sorted from lowest to highest as well. If this were the case the first bins are filled only
-with small (or high) values leaving little to no space for the other values to be packed in to the bins later. 
-We can see this distribution between three test cases.
+Our best fit algorithm approach appears to work best when the values alternate between high and low inputs. 
+The worst case is when the inputs are sorted either from highest to lowest or lowest to highest. If the inputs are
+sorted the first bins are filled only with small (or high) values leaving little to no space for the other values to 
+be packed in to the bins later. We can see this distribution between three test cases.
+
 >Test case one using high-low-high order values.
 ```
 Input desired bin size:
