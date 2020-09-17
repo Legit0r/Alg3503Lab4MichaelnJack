@@ -3,6 +3,7 @@
 - [Explanation of the Algorithm](#explanation-of-the-algorithm)
 - [Testing Data](#testing-data)
 - [When is the Algorithm Optimal?](#when-is-the-algorithm-optimal)
+- [Efficiency of Algorithm in Terms of Big O](#efficiency-of-algorithm-in-terms-of-big-o)
 ----
 
 ## Explanation of the Algorithm
@@ -339,8 +340,7 @@ Integers that could not fit into available bins:
 [7, 6, 5, 4, 3]
 ```
 
-## Efficiency of Algorithm in Terms of Big-O
-```
+## Efficiency of Algorithm in Terms of Big O
 This algorithm has 4 steps, excluding the setup of the input and formatting of the output. These steps are:
 - create 4 empty arrays [Θ(1)]
 - iterate over the list of numbers [Θ(n)]
@@ -348,4 +348,3 @@ This algorithm has 4 steps, excluding the setup of the input and formatting of t
 - insert number into bucket [with java.util.arraylist Θ(1)]
 
 So, the algorithm efficiency would be Θ(n).
-```
